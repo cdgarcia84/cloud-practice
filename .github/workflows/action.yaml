@@ -33,7 +33,7 @@ jobs:
         uses: docker/build-push-action@v4.0.0
         
       - name: Run docker recently builded
-        run: docker run ${{ steps.meta.outputs.containerimage.digest }} -p 80:80
+        run: docker run ${{ meta.outputs.containerimage.digest }} -p 80:80
         
       - name: Test web server
         run: curl http://0.0.0.0/hello.html
