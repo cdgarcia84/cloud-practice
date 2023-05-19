@@ -36,7 +36,7 @@ jobs:
           # outputs: id={{meta.containerimage.digest}}
         
       - name: Run docker recently builded
-        run: docker run ${{ steps.docker-build.outputs.ImageID }} -p 80:80
+        run: docker run ${{ steps.docker-build.outputs.ImageID }} 
         
       - name: Test web server
         run: curl http://0.0.0.0/hello.html
